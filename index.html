@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediBook | Professional Healthcare Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-wrapper">
+            <div class="logo" onclick="app.navigate('home')">
+                <span class="logo-icon">✚</span>
+                <span class="logo-text">MediBook</span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <!-- Links injected by JS based on role -->
+            </ul>
+            <div class="nav-auth" id="nav-auth">
+                <!-- Auth buttons injected by JS -->
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Template: Admin Dashboard -->
+<template id="tpl-admin-dash">
+    <div class="container dashboard-container">
+        <aside class="sidebar">
+            <ul class="sidebar-nav">
+                <li class="active" onclick="showAdminSection('add')"><i class="fas fa-plus-circle"></i> Add Doctor</li>
+                <li onclick="showAdminSection('list')"><i class="fas fa-users"></i> Doctors List</li>
+                <li onclick="showAdminSection('appointments')"><i class="fas fa-calendar-check"></i> All Appointments</li>
+            </ul>
+        </aside>
+        <div class="dash-content" id="admin-sub-content">
+            <!-- Add Doctor Form (Default View) -->
+            <div class="admin-form-container">
+                <h2>Add New Doctor</h2>
+                <form id="add-doctor-form" class="medical-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Doctor Name</label>
+                            <input type="text" id="add-doc-name" placeholder="Dr. John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Specialty</label>
+                            <select id="add-doc-specialty">
+                                <option value="General Physician">General Physician</option>
+                                <option value="Gynecologist">Gynecologist</option>
+                                <option value="Dermatologist">Dermatologist</option>
+                                <option value="Pediatrician">Pediatrician</option>
+                                <option value="Neurologist">Neurologist</option>
+                                <option value="Gastroenterologist">Gastroenterologist</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Experience (Years)</label>
+                            <input type="text" id="add-doc-exp" placeholder="5 Years" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Fees ($)</label>
+                            <input type="text" id="add-doc-fee" placeholder="$50" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Education/Degree</label>
+                            <input type="text" id="add-doc-degree" placeholder="MBBS, MD" required>
+                        </div>
+                        
+                        <!-- NEW FILE UPLOAD SECTION -->
+                        <div class="form-group">
+                            <label>Upload Image</label>
+                            <input type="file" id="add-doc-img" accept="image/*" required>
+                            <!-- Image Preview Box -->
+                            <img id="image-preview" src="" alt="Preview" style="display:none; width: 100px; height: 100px; object-fit: cover; margin-top: 10px; border-radius: 8px; border: 1px solid #cbd5e1;">
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label>About Doctor</label>
+                        <textarea id="add-doc-about" rows="3" placeholder="Brief description..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Doctor</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</template>
+
+    <!-- Main Content Area -->
+    <main id="app-root">
+        <!-- Views will be injected here -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h3>MediBook</h3>
+                    <p>Providing world-class healthcare connectivity since 2024.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li>About Us</li>
+                        <li>Privacy Policy</li>
+                        <li>Terms of Service</li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>Email: support@medibook.com</p>
+                    <p>Phone: +1 (555) 000-1234</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 MediBook. For demonstration purposes only.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
